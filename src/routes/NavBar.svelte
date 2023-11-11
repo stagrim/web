@@ -79,7 +79,7 @@
             <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
             <!-- svelte-ignore a11y-label-has-associated-control -->
             <label tabindex="0" class="btn btn-ghost"
-              ><span class="i-mdi-security h-6 w-6 text-primary-focus"></span>
+              ><span class="i-mdi-security h-6 w-6 text-primary-focus"> </span>
               Admin</label
             >
             <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -87,12 +87,22 @@
               tabindex="0"
               class="menu dropdown-content rounded-box z-[1] w-52 bg-base-100 p-2 shadow"
             >
-              <li>
-                <a href="/admin/access" class="btn-ghost"
-                  ><span class="i-mdi-key h-6 w-6 text-primary-focus"> </span>
-                  Access</a
-                >
-              </li>
+              {#if accessPolicies.includes(apiNames.ACCESS_POLICY.READ)}
+                <li>
+                  <a href="/admin/access" class="btn-ghost"
+                    ><span class="i-mdi-key h-6 w-6 text-primary-focus"> </span>
+                    Access</a
+                  >
+                </li>
+              {/if}
+              {#if accessPolicies.includes(apiNames.DOOR.READ)}
+                <li>
+                  <a href="/admin/doors"
+                    ><span class="i-mdi-door-open h-6 w-6 text-primary-focus"> </span>
+                    Dörrar</a
+                  >
+                </li>
+              {/if}
             </ul>
           </div>
         {/if}
@@ -178,12 +188,22 @@
             tabindex="0"
             class="menu dropdown-content rounded-box z-[1] w-52 bg-base-100 p-2 shadow"
           >
-            <li>
-              <a on:click={close} href="/admin/access"
-                ><span class="i-mdi-key h-6 w-6 text-primary-focus"> </span>
-                Access</a
-              >
-            </li>
+            {#if accessPolicies.includes(apiNames.ACCESS_POLICY.READ)}
+              <li>
+                <a on:click={close} href="/admin/access"
+                  ><span class="i-mdi-key h-6 w-6 text-primary-focus"> </span>
+                  Access</a
+                >
+              </li>
+            {/if}
+            {#if accessPolicies.includes(apiNames.DOOR.READ)}
+              <li>
+                <a on:click={close} href="/admin/doors"
+                  ><span class="i-mdi-door-open h-6 w-6 text-primary-focus"> </span>
+                  Dörrar</a
+                >
+              </li>
+            {/if}
           </ul>
         </div>
       {/if}

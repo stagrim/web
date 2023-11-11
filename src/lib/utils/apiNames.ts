@@ -28,6 +28,9 @@ const apiNames = {
     ...crud("core:position"),
     SEE_INACTIVE: "core:position:inactive:read",
   },
+  ADMIN: {
+    READ: "core:access:admin:read",
+  },
   ACCESS_POLICY: crud("core:access:api"),
   LOGGED_IN: "_",
   FILES: {
@@ -39,6 +42,9 @@ const apiNames = {
   MEMBER: {
     ...crud("core:member"),
     PING: "core:member:ping",
+  },
+  DOOR: {
+    ...crud("core:access:door"),
   },
 } as const;
 
