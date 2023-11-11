@@ -15,7 +15,6 @@
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
   export let data;
-  // export let form;
   $: groupedByYear = data.mandates.reduce<
     Record<string, Prisma.MandateGetPayload<{ include: { member: true } }>[]>
   >((acc, mandate) => {
