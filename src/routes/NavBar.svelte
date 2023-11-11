@@ -13,7 +13,6 @@
   }
 </script>
 
-/** eslint-disable svelte/valid-compile */ /** eslint-disable svelte/valid-compile */
 <div class="drawer">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" bind:checked />
   <div class="drawer-content flex flex-col">
@@ -29,7 +28,7 @@
         <a class="btn" href="/">Hem</a>
         <a class="btn" href="/news">Nyheter</a>
         <a class="btn" href="/events">Evenemang</a>
-        <div class="dropdown-hover dropdown">
+        <div class="dropdown dropdown-hover">
           <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
           <!-- svelte-ignore a11y-label-has-associated-control -->
           <label tabindex="0" class="btn">Filer</label>
