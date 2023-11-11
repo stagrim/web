@@ -3,9 +3,12 @@
   import { getFullName } from "$lib/utils/member";
   import type { Author, CustomAuthor, Member, Position } from "@prisma/client";
 
-  export let member: Member;
-  export let customAuthor: CustomAuthor | undefined = undefined;
-  export let position: Position | undefined = undefined;
+  export let member: Pick<
+    Member,
+    "firstName" | "lastName" | "nickname" | "studentId" | "picturePath"
+  >;
+  export let customAuthor: Pick<CustomAuthor, "name" | "imageUrl"> | undefined = undefined;
+  export let position: Pick<Position, "id" | "name"> | undefined = undefined;
   export let type: Author["type"] = "Member";
   export let size: "sm" | "md" | "lg" | "xl" = "lg";
   export let links = true;
